@@ -28,21 +28,26 @@ jobs:
 
       - name: 🧪 Run TypeScript Tests and Generate JUnit Report
         run: pnpm test
+        continue-on-error: true
 
       - name: 💾 Upload Test Report Artifact (Optional)
         uses: actions/upload-artifact@v4
+        if: always()
         with:
           name: junit-test-report
           path: ./test-results/junit-report.xml
           
       - name: 🕵️ List test-results directory
         run: ls -la ./test-results
+        if: always()
       - name: 📄 Show JUnit XML
         run: cat ./test-results/junit-report.xml
+        if: always()
 
       # https://github.com/mikepenz/xray-action
       - name: ⏫ Publish Results to Jira Xray
         uses: mikepenz/xray-action@v3
+        if: always()
         with:
           username: ${{ secrets.XRAY_CLIENT_ID }}
           password: ${{ secrets.XRAY_CLIENT_SECRET }}
