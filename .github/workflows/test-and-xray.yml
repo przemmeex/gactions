@@ -42,7 +42,7 @@ jobs:
 
       # https://github.com/mikepenz/xray-action
       - name: ⏫ Publish Results to Jira Xray
-        uses: mikepenz/xray-action@{latest-release}
+        uses: mikepenz/xray-action@v3
         with:
           username: ${{ secrets.XRAY_CLIENT_ID }}
           password: ${{ secrets.XRAY_CLIENT_SECRET }}
