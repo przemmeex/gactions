@@ -42,13 +42,12 @@ jobs:
 
       # https://github.com/mikepenz/xray-action
       - name: ⏫ Publish Results to Jira Xray
-        uses: mikepenz/xray-action@v1
+        uses: mikepenz/xray-action@{latest-release}
         with:
           username: ${{ secrets.XRAY_CLIENT_ID }}
           password: ${{ secrets.XRAY_CLIENT_SECRET }}
           testFormat: "junit"
           testPaths: "./test-results/junit-report.xml"
           testExecKey: "TSE-10"
-          verbose: true 
           xrayCloud: "false"
           xrayBaseUrl: ${{ secrets.JIRA_BASE_URL }}
