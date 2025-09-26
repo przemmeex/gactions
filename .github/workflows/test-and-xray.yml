@@ -21,6 +21,9 @@ jobs:
           node-version: '20' # Use a modern LTS version
           cache: 'pnpm'
 
+      - name: 📥 Install pnpm
+        run: npm install -g pnpm
+        
       - name: 📦 Install Dependencies
         run: pnpm install
 
