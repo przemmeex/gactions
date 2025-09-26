@@ -33,11 +33,14 @@ jobs:
         with:
           name: junit-test-report
           path: ./test-results/junit-report.xml
-
+          
+      # https://github.com/mikepenz/xray-action
       - name: ⏫ Publish Results to Jira Xray
-        uses: marlonb/xray-action@v1
+        uses: mikepenz/xray-action@v1
         with:
-          client-id: ${{ secrets.XRAY_CLIENT_ID }} 
-          client-secret: ${{ secrets.XRAY_CLIENT_SECRET }}
-          file: ./test-results/junit-report.xml
-          test-execution-key: "TSE-10"
+          username: ${{ secrets.XRAY_CLIENT_ID }}
+          password: ${{ secrets.XRAY_CLIENT_SECRET }}
+          testFormat: "junit"
+          testPaths: "./test-results/junit-report.xml"
+          testExecKey: "TSE-10"
+          xrayCloud: "false"
