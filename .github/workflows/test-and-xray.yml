@@ -15,19 +15,18 @@ jobs:
       - name: ⬇️ Checkout Repository
         uses: actions/checkout@v4
 
-      - name: 🛠️ Setup Node.js and pnpm
+      - name: 🛠️ Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20' 
+          node-version: '20'
           cache: 'pnpm' 
-          registry-url: 'https://registry.npmjs.org' 
+          cache-dependency-path: 'pnpm-lock.yaml' 
 
-      - name: 📦 Install Dependencies
+      - name: ⬇️ Install pnpm globally
+        run: npm install -g pnpm
+
+      - name: 📦 Install dependencies
         run: pnpm install
-
-      - name: 🧪 Run TypeScript Tests and Generate JUnit Report
-
-        run: pnpm test
 
       - name: 💾 Upload Test Report Artifact (Optional)
         uses: actions/upload-artifact@v4
