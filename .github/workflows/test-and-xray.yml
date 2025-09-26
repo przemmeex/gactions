@@ -26,6 +26,9 @@ jobs:
       - name: 📦 Install dependencies
         run: pnpm install
 
+      - name: 🧪 Run TypeScript Tests and Generate JUnit Report
+        run: pnpm test
+
       - name: 💾 Upload Test Report Artifact (Optional)
         uses: actions/upload-artifact@v4
         with:
