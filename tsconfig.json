@@ -1,0 +1,53 @@
+// tsconfig.json
+{
+  "compilerOptions": {
+    /* Basic Options */
+    // Sets the base directory for source files
+    "rootDir": "./",
+    // Specifies where to output the compiled JavaScript files (if you were building, but jest/ts-jest handles this)
+    "outDir": "./dist",
+    // Target modern JavaScript features for better performance and readability
+    "target": "ES2022",
+
+    /* Module Resolution */
+    // CRITICAL for modern Node.js/Jest/TS setups: Use the newest module resolution
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    
+    // Enable interoperability between CommonJS (like 'supertest') and ES Modules (your 'import' statements)
+    "esModuleInterop": true,
+    // Ensures strict type checking
+    "strict": true,
+    
+    /* Type and Library Management */
+    // Specifies which type definitions to include. This is CRITICAL for 'describe', 'it', 'expect'.
+    "types": [
+      "jest",
+      "node"
+    ],
+    // The source code is assumed to be in the 'src' directory, but often '.' for tests
+    "baseUrl": "./", 
+    
+    /* Linting/Quality Control */
+    // Report errors on unused locals
+    "noUnusedLocals": true, 
+    // Report errors on unused parameters
+    "noUnusedParameters": true,
+    // Ensure all code paths return a value
+    "noImplicitReturns": true,
+    // Ensure case-insensitive file references are correct
+    "forceConsistentCasingInFileNames": true 
+  },
+  
+  /* File Inclusion */
+  // Only compile these files
+  "include": [
+    "**/*.ts"
+  ],
+  // Exclude these files (e.g., Node.js and Jest config files, compiled output)
+  "exclude": [
+    "node_modules",
+    "dist",
+    "jest.config.js" // Exclude the JS config if present
+  ]
+}
