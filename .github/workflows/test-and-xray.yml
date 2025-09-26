@@ -35,12 +35,9 @@ jobs:
           path: ./test-results/junit-report.xml
 
       - name: ⏫ Publish Results to Jira Xray
-        uses: Xray-API-Integration/xray-action@v1
+        uses: marlonb/xray-action@v1
         with:
           client-id: ${{ secrets.XRAY_CLIENT_ID }} 
           client-secret: ${{ secrets.XRAY_CLIENT_SECRET }}
-
           file: ./test-results/junit-report.xml
-          
-          test-execution-key: "TSE-10" 
-
+          test-execution-key: "TSE-10"
