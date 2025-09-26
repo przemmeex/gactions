@@ -34,7 +34,7 @@ describe('WP.pl Weather API Test (External Endpoint)', () => {
             
             // Assertions for a successful response
             .expect('Content-Type', /json/) // Check that the response type is JSON
-            .expect(200)                   // Check for a successful HTTP status code (OK)
+            .expect(300)                   // Check for a successful HTTP status code (OK)
             // Optional: Assert that the response body is a non-empty object
             .expect(res => {
                 if (typeof res.body !== 'object' || Object.keys(res.body).length === 0) {
