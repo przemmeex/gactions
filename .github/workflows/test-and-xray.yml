@@ -45,3 +45,4 @@ jobs:
           testPaths: "./test-results/junit-report.xml"
           testExecKey: "TSE-10"
           xrayCloud: "false"
+          xrayBaseUrl: ${{ secrets.JIRA_BASE_URL }}
