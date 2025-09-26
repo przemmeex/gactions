@@ -39,7 +39,7 @@ jobs:
         run: ls -la ./test-results
       - name: 📄 Show JUnit XML
         run: cat ./test-results/junit-report.xml
-        
+
       # https://github.com/mikepenz/xray-action
       - name: ⏫ Publish Results to Jira Xray
         uses: mikepenz/xray-action@v1
@@ -49,5 +49,6 @@ jobs:
           testFormat: "junit"
           testPaths: "./test-results/junit-report.xml"
           testExecKey: "TSE-10"
+          verbose: true 
           xrayCloud: "false"
           xrayBaseUrl: ${{ secrets.JIRA_BASE_URL }}
