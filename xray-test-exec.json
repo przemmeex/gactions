@@ -2,9 +2,6 @@
     "fields": {
         "summary": "Brand new Test execution",
         "issuetype": { "id": "10045" },
-        "components": [
-            { "name": "Interface" },
-            { "name": "Core" }
-        ]
+        "description": "Results from the nightly regression suite for branch feature/xyz."
     }
 }
