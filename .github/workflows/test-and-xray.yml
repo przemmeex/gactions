@@ -56,5 +56,6 @@ jobs:
           testExecKey: "TSE-10"
           xrayCloud: "false"
           xrayBaseUrl: ${{ secrets.JIRA_BASE_URL }}
-          importParallelism: 0
-          importRetryLimit: 0
+          importParallelism: 1
+          importRetryLimit: 1
+          responseTimeout: 10000
