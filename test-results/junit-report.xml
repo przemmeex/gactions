@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.example.OrderProcessorTest" time="0.080" tests="3" errors="0" skipped="0" failures="0">
+    <properties>
+        <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+        </properties>
+
+    <testcase classname="com.example.OrderProcessorTest" name="testOrderCreation" time="0.045"/>
+
+    <testcase classname="com.example.OrderProcessorTest" name="testPriceCalculation" time="0.020"/>
+
+    <testcase classname="com.example.OrderProcessorTest" name="testInventoryUpdate" time="0.015"/>
+
+    <system-out>
+        <![CDATA[Standard output messages from the test run, if any.]]>
+    </system-out>
+
+    <system-err>
+        <![CDATA[Standard error messages from the test run, if any.]]>
+    </system-err>
+
+</testsuite>
