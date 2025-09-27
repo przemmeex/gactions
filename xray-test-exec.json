@@ -1,0 +1,10 @@
+{
+    "fields": {
+        "summary": "Brand new Test execution",
+        "issuetype": { "id": "10045" },
+        "components": [
+            { "name": "Interface" },
+            { "name": "Core" }
+        ]
+    }
+}
