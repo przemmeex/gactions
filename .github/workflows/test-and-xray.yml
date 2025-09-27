@@ -37,6 +37,13 @@ jobs:
           name: junit-test-report
           path: ./test-results/junit-report.xml
           
+      - name: 🕵️ List test-results directory
+        run: ls -la ./test-results
+        if: always()
+      - name: 📄 Show JUnit XML
+        run: cat ./test-results/junit-report.xml
+        if: always()
+
       # https://github.com/mikepenz/xray-action
       - name: ⏫ Publish Results to Jira Xray
         uses: mikepenz/xray-action@v3
@@ -46,7 +53,7 @@ jobs:
           password: ${{ secrets.XRAY_CLIENT_SECRET }}
           testFormat: "junit"
           testPaths: "./test-results/junit-report.xml"
-          testExecutionJson: "./xray-test-exec.json"
+          testExecKey: "TSE-10"
           xrayCloud: "true"
           importParallelism: 1
           importRetryLimit: 1
