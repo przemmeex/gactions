@@ -57,5 +57,5 @@ jobs:
           xrayCloud: "false"
           xrayBaseUrl: ${{ secrets.JIRA_BASE_URL }}
           importParallelism: 1
-          importRetryLimit: 1
+          importRetryLimit: 0
           responseTimeout: 10000
