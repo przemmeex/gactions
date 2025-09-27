@@ -49,13 +49,12 @@ jobs:
         uses: mikepenz/xray-action@v3
         if: always()
         with:
-          username: ${{ secrets.JIRA_USERNAME }}
-          password: ${{ secrets.JIRA_PASSWORD }}
+          username: ${{ secrets.XRAY_CLIENT_ID }}
+          password: ${{ secrets.XRAY_CLIENT_SECRET }}
           testFormat: "junit"
           testPaths: "./test-results/junit-report.xml"
           testExecKey: "TSE-10"
-          xrayCloud: "false"
-          xrayBaseUrl: ${{ secrets.JIRA_BASE_URL }}
+          xrayCloud: "true"
           importParallelism: 1
-          importRetryLimit: 0
+          importRetryLimit: 1
           responseTimeout: 5000
